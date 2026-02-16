@@ -18,12 +18,9 @@
   <body>
     <header>
       <!-- Navbar section -->
-      <div class="navbar bg-base-100 justify-between flex">
+      <div class="navbar bg-base-100 justify-between flex px-60">
         <div class="navbar-start">
-          <a
-            class="btn btn-ghost text-2xl px-10 text-blue-700 font-bold sm:first:"
-            >VintageShop</a
-          >
+          <a class="text-2xl text-blue-700 font-bold sm:first:">VintageShop</a>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal space-x-1">
@@ -34,7 +31,7 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <a> <i class="fa-solid fa-cart-arrow-down mr-10 sm:mr-5"></i></a>
+          <a> <i class="fa-solid fa-cart-arrow-down"></i></a>
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
               <svg
@@ -70,16 +67,14 @@
       class="bg-[url('./Assets/banner-image.png')] h-screen bg-cover bg-center"
     >
       <div class="bg-gradient-to-r from-black/100 to-transparent h-full">
-        <div class="py-60">
-          <h2 class="font-bold text-center text-5xl text-white mr-100 py-4">
-            Best Collection For You
-          </h2>
-          <p class="text-xl text-white mr-100 ml-55 text-pretty py-2">
+        <div class="py-60 ml-60">
+          <h2 class="font-bold text-5xl text-white">Best Collection For You</h2>
+          <p class="text-lg text-white text-pretty my-5">
             Discover the latest trend in fashion,electronics,and more.Shop
             with<br />confidence and style at VintageShop
           </p>
           <button
-            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded mr-100 ml-55"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
           >
             Shop Now
           </button>
@@ -87,7 +82,7 @@
       </div>
     </section>
     <!-- Features / Why Choose Us -->
-    <section class="bg-gray-200 text-pretty px-60 my-5 py-7">
+    <section class="bg-gray-100 text-pretty px-60 py-7">
       <div class="text-center">
         <div>
           <h2 class="font-bold text-4xl py-5">Why Choose Us</h2>
@@ -129,9 +124,9 @@
       </div>
     </section>
     <!-- Trending/top rated section -->
-    <section class="px-60 my-5">
+    <section class="px-60 py-10">
       <div class="">
-        <h2 class="text-3xl font-bold text-black text-left my-10">
+        <h2 class="text-3xl font-bold text-black text-left py-10">
           Trending Now
         </h2>
         <div class="flex justify-evenly gap-10">
@@ -246,49 +241,48 @@
   </body>
   <!-- Newsletter and footer section -->
   <footer>
-    <section class="bg-blue-950 px-60 my-5">
-      <div class="flex justify-between py-5">
-        <div class="">
-          <h2 class="text-blue-400 font-bold text-lg">VintageShop</h2>
-          <p class="text-pretty text-gray-400">
-            Your one step shop for all your fashion<br />
-            and lifestyle needs.Quality products and fast<br />delivery,and
-            excellent support
+    <section class="bg-[#010c1f] px-60 py-7">
+      <div class="flex flex-row justify-between py-5">
+        <div class="basis-sm">
+          <h2 class="text-blue-400 font-bold text-lg mb-3">VintageShop</h2>
+          <p class="text-gray-400 text-sm">
+            Your one step shop for all your fashion and lifestyle needs. Quality
+            products and fast delivery,and excellent support
           </p>
         </div>
-        <div class="text-gray-500">
+        <div class="text-gray-500 basis-sm pl-7">
           <h2 class="font-semibold">QUICKLINKS</h2>
           <ul class="text-gray-400 font-semibold">
-            <li>Home</li>
-            <li>Products</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li class="py-1">Home</li>
+            <li class="py-1">Products</li>
+            <li class="py-1">About</li>
+            <li class="py-1">Contact</li>
           </ul>
         </div>
-        <div class="">
+        <div class="basis-sm">
           <h2 class="text-gray-500 font-semibold">SUPPORT</h2>
           <ul class="text-gray-400 font-semibold">
-            <li>FAQ</li>
-            <li>Shipping</li>
-            <li>Returns</li>
-            <li>Privacy Policy</li>
+            <li class="py-1">FAQ</li>
+            <li class="py-1">Shipping</li>
+            <li class="py-1">Returns</li>
+            <li class="py-1">Privacy Policy</li>
           </ul>
         </div>
-        <div class="">
+        <div class="basis-lg">
           <h2 class="text-gray-500 font-semibold">
             SUBSCRIBE TO OUR NEWSLETTER
           </h2>
-          <p class="text-gray-400 font-semibold">
+          <p class="text-gray-400 py-3 font-semibold">
             The latest news,articles,resources,sent to your inbox weekly
           </p>
 
           <div>
             <input
-              class="bg-white rounded p-3"
+              class="bg-white text-gray-800 rounded p-2"
               type="email"
               placeholder="Enter your email"
             />
-            <button class="bg-blue-600 rounded p-3 font-semibold">
+            <button class="bg-blue-600 text-white rounded p-2 font-semibold">
               Subscribe
             </button>
           </div>

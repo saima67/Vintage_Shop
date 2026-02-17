@@ -39,34 +39,25 @@ const displayProducts = (products) => {
   products.forEach((product) => {
     const productDiv = document.createElement("div");
     productDiv.innerHTML = `
-    <div class="border-1 border-gray-200 rounded-lg">
-          <div class="flex justify-center">
-            <img class="w-9/12 rounded-t-lg" src=${product.image} alt="" />
+    <div class="product-card">
+          <div class="product-image-box">
+            <img src="${product.image}" alt="">
           </div>
-          <div class="p-4">
-            <div class="flex justify-between">
-              <p class="text-blue-800 bg-blue-300 p-1 rounded-lg">${product.category}</p>
-              <p class="text-gray-500">
-                <i class="fa-solid fa-star text-yellow-400"></i>${product.rating.rate}(${product.rating.count})
-              </p>
+
+          <div class="product-content">
+            <div class="product-category">${product.category}</div>
+
+            <div class="product-title">${product.title}</div>
+
+            <div class="product-rating">
+              ⭐ ${product.rating.rate} (${product.rating.count})
             </div>
-            <div class="py-4">
-              <p class="text-wrap font-bold">${product.title}</p>
-              <p class="font-bold">$${product.price}</p>
-            </div>
-            <div class="flex justify-between">
-              <button onclick="loadProductDetail(${product.id})" class="rounded-sm border-gray-600 border-1 bg-white px-6 cursor-pointer">
-                <i class="fa-regular fa-eye"></i>
-                Details
-              </button>
-              <button
-                class="rounded-sm border-gray-600 border-1 bg-blue-500 px-6 text-white cursor-pointer"
-              >
-                <i
-                  class="fa-solid fa-cart-arrow-down mr-10 sm:mr-5 text-white"
-                ></i
-                >Add
-              </button>
+
+            <div class="product-price">$${product.price}</div>
+
+            <div class="card-buttons">
+              <button onclick="loadProductDetail(${product.id})" class="common-button details-btn">Details</button>
+              <button class="common-button add-btn">Add</button>
             </div>
           </div>
         </div>
@@ -74,6 +65,7 @@ const displayProducts = (products) => {
     productsContainer.append(productDiv);
   });
 };
+
 const loadProductDetail = async (id) => {
   const url = `https://fakestoreapi.com/products/${id}`;
   console.log(url);
@@ -81,6 +73,7 @@ const loadProductDetail = async (id) => {
   const details = await res.json();
   displayProductDetails(details);
 };
+
 const displayProductDetails = (product) => {
   console.log(product);
   const detailsBox = document.getElementById("details-container");
@@ -93,12 +86,14 @@ const displayProductDetails = (product) => {
             </div>`;
   document.getElementById("details-modal").showModal();
 };
+
 const removeActive = () => {
   const categoryButtons = document.querySelectorAll(".category");
   categoryButtons.forEach((btn) => {
     btn.classList.remove("active");
   });
 };
+
 const loadByCategory = (category) => {
   //console.log(category);
   fetch(`https://fakestoreapi.com/products/category/${category}`)
@@ -118,34 +113,25 @@ const displayByCategory = (products) => {
   products.forEach((product) => {
     const productDiv = document.createElement("div");
     productDiv.innerHTML = `
-    <div class="border-1 border-gray-200 rounded-lg">
-          <div class="flex justify-center">
-            <img class="w-9/12 rounded-t-lg" src=${product.image} alt="" />
+    <div class="product-card">
+          <div class="product-image-box">
+            <img src="${product.image}" alt="">
           </div>
-          <div class="p-4">
-            <div class="flex justify-between">
-              <p class="text-blue-800 bg-blue-300 p-1 rounded-lg">${product.category}</p>
-              <p class="text-gray-500">
-                <i class="fa-solid fa-star text-yellow-400"></i>${product.rating.rate}(${product.rating.count})
-              </p>
+
+          <div class="product-content">
+            <div class="product-category">${product.category}</div>
+
+            <div class="product-title">${product.title}</div>
+
+            <div class="product-rating">
+              ⭐ ${product.rating.rate} (${product.rating.count})
             </div>
-            <div class="py-4">
-              <p class="text-wrap font-bold">${product.title}</p>
-              <p class="font-bold">$${product.price}</p>
-            </div>
-            <div class="flex justify-between">
-              <button class="rounded-sm border-gray-600 border-1 bg-white px-6">
-                <i class="fa-regular fa-eye"></i>
-                Details
-              </button>
-              <button
-                class="rounded-sm border-gray-600 border-1 bg-blue-500 px-6 text-white"
-              >
-                <i
-                  class="fa-solid fa-cart-arrow-down mr-10 sm:mr-5 text-white"
-                ></i
-                >Add
-              </button>
+
+            <div class="product-price">$${product.price}</div>
+
+            <div class="card-buttons">
+              <button onclick="loadProductDetail(${product.id})" class="common-button details-btn">Details</button>
+              <button class="common-button add-btn">Add</button>
             </div>
           </div>
         </div>

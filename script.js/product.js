@@ -55,7 +55,7 @@ const displayProducts = (products) => {
               <p class="font-bold">$${product.price}</p>
             </div>
             <div class="flex justify-between">
-              <button class="rounded-sm border-gray-600 border-1 bg-white px-6 cursor-pointer">
+              <button onclick="loadProductDetail(${product.id})" class="rounded-sm border-gray-600 border-1 bg-white px-6 cursor-pointer">
                 <i class="fa-regular fa-eye"></i>
                 Details
               </button>
@@ -74,7 +74,25 @@ const displayProducts = (products) => {
     productsContainer.append(productDiv);
   });
 };
-
+const loadProductDetail = async (id) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+  console.log(url);
+  const res = await fetch(url);
+  const details = await res.json();
+  displayProductDetails(details);
+};
+const displayProductDetails = (product) => {
+  console.log(product);
+  const detailsBox = document.getElementById("details-container");
+  detailsBox.innerHTML = `<div>
+              <h2 class="text-lg font-bold">${product.title}</h2>
+              <p class="py-3">${product.description}</p>
+              <p class="text-lg mb-4"><span class="font-bold">$${product.price}</span> <i class="fa-solid fa-star text-yellow-400"></i>${product.rating.rate}(${product.rating.count})</p>
+              <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded cursor-pointer">Buy Now</button>
+              <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded cursor-pointer">ADD</button>
+            </div>`;
+  document.getElementById("details-modal").showModal();
+};
 const removeActive = () => {
   const categoryButtons = document.querySelectorAll(".category");
   categoryButtons.forEach((btn) => {
